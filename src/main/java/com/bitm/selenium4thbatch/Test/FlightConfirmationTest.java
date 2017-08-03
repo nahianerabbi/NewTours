@@ -38,7 +38,7 @@ private WebDriver driver =null;
 	@Test(priority = 4)
 	public void checkFlightConfirmationTitle() throws InterruptedException {
 		driver =DriverExecutionTest.driver ;
-		driver.get(UrlUtils.FLIGHT_CONFIRMATION_URL);
+	
 		Assert.assertEquals(driver.getTitle(), UrlUtils.FLIGHT_CONFIRMATION_PAGE_TITLE);
 
 		
