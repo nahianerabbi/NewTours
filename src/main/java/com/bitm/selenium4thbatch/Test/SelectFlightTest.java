@@ -16,21 +16,7 @@ public class SelectFlightTest {
 private WebDriver driver =null;
 	
 	
-	@Test(priority=1)
-	public void initiateLogin()throws InterruptedException {
-		LoginTest login = new LoginTest();
-		login.checkHomePageTitle();
-		login.loginTest();
-		
-	}
 	
-	@Test(priority=2)
-	public void initiateFlightFinder() throws InterruptedException{
-		
-		FlightFinderTest flightfinder= new FlightFinderTest();
-		flightfinder.checkFlightFinderPageTitle();
-		flightfinder.checkFlightFinder();
-	}
 	
 @Test(priority=3)
 	

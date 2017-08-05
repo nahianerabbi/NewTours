@@ -16,16 +16,9 @@ public class FlightFinderTest {
 	private WebDriver driver =null;
 	
 	
+	
+	
 	@Test(priority=1)
-	public void initiateLogin()throws InterruptedException {
-		LoginTest login = new LoginTest();
-		login.checkHomePageTitle();
-		login.loginTest();
-		
-	}
-	
-	
-	@Test(priority=2)
 	
 	public void checkFlightFinderPageTitle() throws InterruptedException  {
 		
@@ -43,7 +36,7 @@ public class FlightFinderTest {
 	
 	}
 	
-	@Test(priority=3)
+	@Test(priority=2)
 	public void checkFlightFinder()throws InterruptedException{
 		
 		driver.findElement(By.xpath(XpathUtils.FlightFinder.TRIP_TYPE)).click();
