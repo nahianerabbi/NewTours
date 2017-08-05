@@ -71,7 +71,7 @@ public class ExcelUtils {
 	
 	
 	public static List<FlightFinderDto> getFlightFinderData() throws IOException{
-		List<FlightFinderDto> flightfinder=new ArrayList<FlightFinderDto>();
+		List<FlightFinderDto> flightfinders=new ArrayList<FlightFinderDto>();
 		
 		//flight finder is the second sheet in excel so getSheet parameter set to 1
 		Iterator<Row> iterator = ExcelUtils.getSheet(1).iterator();
@@ -123,15 +123,15 @@ public class ExcelUtils {
 				}               
                  
             }
-            flightfinder.add(flightfinderdata);
+            flightfinders.add(flightfinderdata);
         }
         close();
-		return flightfinder;
+		return flightfinders;
 	}		
 	
 	
 	public static List<BookFlightDto> getBookFlightData() throws IOException{
-		List<BookFlightDto> bookflight=new ArrayList<BookFlightDto>();
+		List<BookFlightDto> bookflights=new ArrayList<BookFlightDto>();
 		
 		//book flight is the third sheet in excel so getSheet parameter set to 2
 		Iterator<Row> iterator = ExcelUtils.getSheet(2).iterator();
@@ -237,10 +237,10 @@ public class ExcelUtils {
 				}               
                  
             }
-            bookflight.add(bookflightdata);
+            bookflights.add(bookflightdata);
         }
         close();
-		return bookflight;
+		return bookflights;
 	}	
 
 	private static void close() throws IOException {

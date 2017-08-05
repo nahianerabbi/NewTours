@@ -5,10 +5,11 @@
 
 	<test name="Complete NewTours Site Test">
 		<classes>
-
-			<class name="com.bitm.selenium4thbatch.Test.LoginTest">
-			</class>
-
+			<class name="com.bitm.selenium4thbatch.Test.LoginTest"/>
+			<class name="com.bitm.selenium4thbatch.Test.FlightFinderTest"/>
+			<class name="com.bitm.selenium4thbatch.Test.SelectFlightTest"/>
+			<class name="com.bitm.selenium4thbatch.Test.BookFlightTest"/>
+			
 		</classes>
 	</test>
 </suite>	

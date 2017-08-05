@@ -6,12 +6,12 @@ import org.testng.annotations.DataProvider;
 
 import com.bitm.selenium4thbatch.Utils.ExcelUtils;
 
-public class FlightFinderDataProvider {
+public class BookFlightDataProvider {
 	
-	@DataProvider(name = "flightfinderdataprovider")
-	public static Object[][] getFlightFinderData() {
+	@DataProvider(name = "bookflightdataprovider")
+	public static Object[][] getBookFlightData() {
 		try {
-			return new Object[][] { { ExcelUtils.getFlightFinderData() }, };
+			return new Object[][] { { ExcelUtils.getBookFlightData() }, };
 		} catch (IOException e) {
 			e.printStackTrace();
 			return null;

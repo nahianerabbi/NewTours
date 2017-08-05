@@ -14,7 +14,7 @@ private WebDriver driver =null;
 	
 
 	
-	@Test(priority = 4)
+	@Test(priority = 1)
 	public void checkFlightConfirmationTitle() throws InterruptedException {
 		driver =DriverExecutionTest.driver ;
 	
