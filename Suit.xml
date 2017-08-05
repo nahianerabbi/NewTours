@@ -6,7 +6,7 @@
 	<test name="Complete NewTours Site Test">
 		<classes>
 
-			<class name="com.bitm.selenium4thbatch.Test.BookFlightTest">
+			<class name="com.bitm.selenium4thbatch.Test.LoginTest">
 			</class>
 
 		</classes>

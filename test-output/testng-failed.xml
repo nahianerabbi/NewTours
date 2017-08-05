@@ -3,13 +3,11 @@
 <suite name="Failed suite [Test Newtours Site]">
   <test name="Complete NewTours Site Test(failed)">
     <classes>
-      <class name="com.bitm.selenium4thbatch.Test.BookFlightTest">
+      <class name="com.bitm.selenium4thbatch.Test.LoginTest">
         <methods>
-          <include name="bookFlight"/>
-          <include name="initiateFlightFinder"/>
-          <include name="initiateSelectFlight"/>
+          <include name="loginTest"/>
         </methods>
-      </class> <!-- com.bitm.selenium4thbatch.Test.BookFlightTest -->
+      </class> <!-- com.bitm.selenium4thbatch.Test.LoginTest -->
     </classes>
   </test> <!-- Complete NewTours Site Test(failed) -->
 </suite> <!-- Failed suite [Test Newtours Site] -->

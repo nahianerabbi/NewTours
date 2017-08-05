@@ -20,11 +20,14 @@ public class ExcelUtils {
 	private static FileInputStream inputStream = null;
 	private static Workbook workbook= null;
 
-	private static Sheet getSheet(int sheetNo) throws IOException{
-		inputStream = new FileInputStream(new File("E:\\newtours.xlsx"));
+	private  static Sheet getSheet(int sheetNo) throws IOException{
+		// change the file location as per your computer
+		File f = new File("src/main/java");
+		File fs = new File(f,"abc.xlsx");
+		inputStream = new FileInputStream(new File(fs.getAbsolutePath()));
 		workbook = new XSSFWorkbook(inputStream);
-		Sheet sheet = (Sheet) workbook.getSheetAt(sheetNo);
-		return sheet;
+        Sheet sheet = workbook.getSheetAt(sheetNo);
+        return sheet;
 	}
 	
 	public static List<LoginDto> getLoginData() throws IOException{
