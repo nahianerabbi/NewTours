@@ -6,7 +6,7 @@ public class UrlUtils {
 	public static final String LOGIN_PAGE_TITLE = "Welcome: Mercury Tours";
 	
 	public static final String FLIGTH_FINDER_URL="http://newtours.demoaut.com/mercuryreservation.php";
-	public static final String FLIGHT_FINDER_PAGE_TITLE= "Find a Flight: Mercury Tours: ";
+	public static final String FLIGHT_FINDER_PAGE_TITLE= "Find a Flight: Mercury Tours:";
 	
 	public static final String SELECT_FLIGHT_URL="http://newtours.demoaut.com/mercuryreservation2.php";
 	public static final String SELECT_FLIGHT_PAGE_TITLE="Select a Flight: Mercury Tours";

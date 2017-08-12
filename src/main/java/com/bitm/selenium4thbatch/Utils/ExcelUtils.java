@@ -4,10 +4,12 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
+
 import java.util.Iterator;
 import java.util.List;
 
 import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
@@ -74,6 +76,7 @@ public class ExcelUtils {
 		List<FlightFinderDto> flightfinders=new ArrayList<FlightFinderDto>();
 		
 		//flight finder is the second sheet in excel so getSheet parameter set to 1
+		DataFormatter formatter = new DataFormatter();
 		Iterator<Row> iterator = ExcelUtils.getSheet(1).iterator();
         while (iterator.hasNext()) {
             Row nextRow = iterator.next();
@@ -84,39 +87,35 @@ public class ExcelUtils {
                 Cell cell = cellIterator.next();
                 switch (cellCounter) {
 				case 0:
-					flightfinderdata.setPassengers(cell.getStringCellValue());
+					flightfinderdata.setPassengers(formatter.formatCellValue(cell));
 					cellCounter++;
 					break;
 				case 1:
-					flightfinderdata.setDepartingFrom(cell.getStringCellValue());
+					flightfinderdata.setDepartingFrom(formatter.formatCellValue(cell));
 					cellCounter++;
 					break;
 				case 2:
-					flightfinderdata.setDepartingFrom(cell.getStringCellValue());
+					flightfinderdata.setDepartingMonth(formatter.formatCellValue(cell));
 					cellCounter++;
 					break;
 				case 3:
-					flightfinderdata.setDepartingMonth(cell.getStringCellValue());
+					flightfinderdata.setDepartingDate(formatter.formatCellValue(cell));
 					cellCounter++;
 					break;
 				case 4:
-					flightfinderdata.setDepartingDate(cell.getStringCellValue());
+					flightfinderdata.setArrivingIn(formatter.formatCellValue(cell));
 					cellCounter++;
 					break;
 				case 5:
-					flightfinderdata.setArrivingIn(cell.getStringCellValue());
+					flightfinderdata.setReturningMonth(formatter.formatCellValue(cell));
 					cellCounter++;
 					break;
 				case 6:
-					flightfinderdata.setReturningMonth(cell.getStringCellValue());
+					flightfinderdata.setReturningDate(formatter.formatCellValue(cell));
 					cellCounter++;
 					break;
 				case 7:
-					flightfinderdata.setReturningDate(cell.getStringCellValue());
-					cellCounter++;
-					break;
-				case 8:
-					flightfinderdata.setAirline(cell.getStringCellValue());
+					flightfinderdata.setAirline(formatter.formatCellValue(cell));
 					break;
 				default:
 					break;
@@ -128,12 +127,13 @@ public class ExcelUtils {
         close();
 		return flightfinders;
 	}		
-	
+
 	
 	public static List<BookFlightDto> getBookFlightData() throws IOException{
 		List<BookFlightDto> bookflights=new ArrayList<BookFlightDto>();
 		
 		//book flight is the third sheet in excel so getSheet parameter set to 2
+		DataFormatter formatter = new DataFormatter();
 		Iterator<Row> iterator = ExcelUtils.getSheet(2).iterator();
         while (iterator.hasNext()) {
             Row nextRow = iterator.next();
@@ -144,91 +144,91 @@ public class ExcelUtils {
                 Cell cell = cellIterator.next();
                 switch (cellCounter) {
 				case 0:
-					bookflightdata.setFirstName(cell.getStringCellValue());
+					bookflightdata.setFirstName(formatter.formatCellValue(cell));
 					cellCounter++;
 					break;
 				case 1:
-					bookflightdata.setLastName(cell.getStringCellValue());
+					bookflightdata.setLastName(formatter.formatCellValue(cell));
 					cellCounter++;
 					break;
 				case 2:
-					bookflightdata.setMeal(cell.getStringCellValue());
+					bookflightdata.setMeal(formatter.formatCellValue(cell));
 					cellCounter++;
 					break;
 				case 3:
-					bookflightdata.setCardType(cell.getStringCellValue());
+					bookflightdata.setCardType(formatter.formatCellValue(cell));
 					cellCounter++;
 					break;
 				case 4:
-					bookflightdata.setCardNumber(cell.getStringCellValue());
+					bookflightdata.setCardNumber(formatter.formatCellValue(cell));
 					cellCounter++;
 					break;
 				case 5:
-					bookflightdata.setCardExpirationMonth(cell.getStringCellValue());
+					bookflightdata.setCardExpirationMonth(formatter.formatCellValue(cell));
 					cellCounter++;
 					break;
 				case 6:
-					bookflightdata.setCardExpirationDate(cell.getStringCellValue());
+					bookflightdata.setCardExpirationDate(formatter.formatCellValue(cell));
 					cellCounter++;
 					break;
 				case 7:
-					bookflightdata.setCardFirstName(cell.getStringCellValue());
+					bookflightdata.setCardFirstName(formatter.formatCellValue(cell));
 					cellCounter++;
 					break;
 				case 8:
-					bookflightdata.setCardMiddleName(cell.getStringCellValue());
+					bookflightdata.setCardMiddleName(formatter.formatCellValue(cell));
 					cellCounter++;
 					break;
 				case 9:
-					bookflightdata.setCardLastName(cell.getStringCellValue());
+					bookflightdata.setCardLastName(formatter.formatCellValue(cell));
 					cellCounter++;
 					break;
 				case 10:
-					bookflightdata.setBillingAddressLine1(cell.getStringCellValue());
+					bookflightdata.setBillingAddressLine1(formatter.formatCellValue(cell));
 					cellCounter++;
 					break;
 				case 11:
-					bookflightdata.setBillingAddressLine2(cell.getStringCellValue());
+					bookflightdata.setBillingAddressLine2(formatter.formatCellValue(cell));
 					cellCounter++;
 					break;
 				case 12:
-					bookflightdata.setBillingCity(cell.getStringCellValue());
+					bookflightdata.setBillingCity(formatter.formatCellValue(cell));
 					cellCounter++;
 					break;
 				case 13:
-					bookflightdata.setBillingState(cell.getStringCellValue());
+					bookflightdata.setBillingState(formatter.formatCellValue(cell));
 					cellCounter++;
 					break;
 				case 14:
-					bookflightdata.setBillingPostalCode(cell.getStringCellValue());
+					bookflightdata.setBillingPostalCode(formatter.formatCellValue(cell));
 					cellCounter++;
 					break;
 				case 15:
-					bookflightdata.setBillingCountry(cell.getStringCellValue());
+					bookflightdata.setBillingCountry(formatter.formatCellValue(cell));
 					cellCounter++;
 					break;
 				case 16:
-					bookflightdata.setDeliveryAddressLine1(cell.getStringCellValue());
+					bookflightdata.setDeliveryAddressLine1(formatter.formatCellValue(cell));
 					cellCounter++;
 					break;
 				case 17:
-					bookflightdata.setDeliveryAddressline2(cell.getStringCellValue());
+					bookflightdata.setDeliveryAddressline2(formatter.formatCellValue(cell));
 					cellCounter++;
 					break;
 				case 18:
-					bookflightdata.setDeliveryCity(cell.getStringCellValue());
+					bookflightdata.setDeliveryCity(formatter.formatCellValue(cell));
 					cellCounter++;
 					break;
 				case 19:
-					bookflightdata.setDeliveryState(cell.getStringCellValue());
+					bookflightdata.setDeliveryState(formatter.formatCellValue(cell));
 					cellCounter++;
 					break;
 				case 20:
-					bookflightdata.setDeliveryPostalCode(cell.getStringCellValue());
+					bookflightdata.setDeliveryPostalCode(formatter.formatCellValue(cell));
 					cellCounter++;
 					break;
 				case 21:
-					bookflightdata.setDeliveryCountry(cell.getStringCellValue());
+					bookflightdata.setDeliveryCountry(formatter.formatCellValue(cell));
 					cellCounter++;
 					break;
 					

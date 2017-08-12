@@ -4,8 +4,15 @@ import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import com.bitm.selenium4thbatch.DTO.BookFlightDto;
+import com.bitm.selenium4thbatch.DataProvider.BookFlightDataProvider;
+import com.bitm.selenium4thbatch.Utils.DriverExecutionTest;
+import com.bitm.selenium4thbatch.Utils.UrlUtils;
 import com.bitm.selenium4thbatch.Utils.XpathUtils;
 
 public class BookFlightTest {
@@ -15,22 +22,22 @@ private WebDriver driver =null;
 
 	
 
-/*   @Test(priority=1)
-
-   public void checkBookFlight() throws InterruptedException  {
-	
-	   driver =DriverExecutionTest.driver ;
-	
-	   Assert.assertEquals(driver.getTitle(), UrlUtils.BOOK_FLIGHT_PAGE_TITLE);
-
-	   System.out.println("Flight Finder Page Title Verified !!!");
-}*/
-
-	
-	@Test(priority=1,dataProvider="bookflightdataprovider", dataProviderClass=BookFlightTest.class)
-	public void bookFlightTest(List<BookFlightDto>BookFlightDataProvider)throws InterruptedException{
+ @Test(priority=1)	
+	public void checkBookFlightPageTitle() throws InterruptedException  {
 		
-		for (BookFlightDto bookflightexcel: BookFlightDataProvider){
+		driver =DriverExecutionTest.driver ;
+		WebDriverWait wait=new WebDriverWait(driver, 40);
+		WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(XpathUtils.BookFlight.FIRST_NAME)));
+		Assert.assertEquals(driver.getTitle(), UrlUtils.BOOK_FLIGHT_PAGE_TITLE);
+		System.out.println(" Book Flight Page Title Verified !!!");
+
+}
+
+	
+	@Test(priority=2,dataProvider="bookflightdataprovider", dataProviderClass=BookFlightDataProvider.class)
+	public void bookFlightTest(List<BookFlightDto>bookflights)throws InterruptedException{
+		
+		for (BookFlightDto bookflightexcel: bookflights){
 		
 		driver.findElement(By.xpath(XpathUtils.BookFlight.FIRST_NAME)).sendKeys(bookflightexcel.getFirstName());
 		driver.findElement(By.xpath(XpathUtils.BookFlight.LAST_NAME)).sendKeys(bookflightexcel.getLastName());

@@ -3,14 +3,9 @@
 <suite name="Failed suite [Test Newtours Site]">
   <test name="Complete NewTours Site Test(failed)">
     <classes>
-      <class name="com.bitm.selenium4thbatch.Test.FlightFinderTest">
-        <methods>
-          <include name="flightFinderTest"/>
-        </methods>
-      </class> <!-- com.bitm.selenium4thbatch.Test.FlightFinderTest -->
       <class name="com.bitm.selenium4thbatch.Test.BookFlightTest">
         <methods>
-          <include name="bookFlightTest"/>
+          <include name="bookFlightTest" invocation-numbers="0"/>
         </methods>
       </class> <!-- com.bitm.selenium4thbatch.Test.BookFlightTest -->
     </classes>
